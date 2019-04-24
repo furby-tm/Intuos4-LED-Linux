@@ -1,0 +1,418 @@
+\hypertarget{WacomIntuos4LED_8cpp}{
+\section{src/WacomIntuos4LED.cpp File Reference}
+\label{WacomIntuos4LED_8cpp}\index{src/WacomIntuos4LED.cpp@{src/WacomIntuos4LED.cpp}}
+}
+{\ttfamily \#include $<$cassert$>$}\par
+{\ttfamily \#include $<$cstring$>$}\par
+{\ttfamily \#include $<$iostream$>$}\par
+{\ttfamily \#include $<$iomanip$>$}\par
+{\ttfamily \#include $<$Magick++.h$>$}\par
+{\ttfamily \#include \char`\"{}WacomIntuos4LED.h\char`\"{}}\par
+\subsection*{Defines}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{WacomIntuos4LED_8cpp_a9dcd3970f390800b49f905f2943bc4fd}{WAC\_\-VENDOR\_\-ID}~0x056a
+\item 
+\#define \hyperlink{WacomIntuos4LED_8cpp_a5e33d08046942bb82bd28a4dc08e75f9}{WAC\_\-INTUOS4\_\-M\_\-PRODUCT\_\-ID}~0x00b9
+\item 
+\#define \hyperlink{WacomIntuos4LED_8cpp_a59446ac297d2023cf3cdbf18036b3d27}{WAC\_\-USB\_\-TIMEOUT}~100
+\item 
+\#define \hyperlink{WacomIntuos4LED_8cpp_a5138e4f2746ee434ae1df4b89c309609}{WAC\_\-USB\_\-RETRIES}~10
+\item 
+\#define \hyperlink{WacomIntuos4LED_8cpp_a6b1962cabecee5c5d03bd5e6024e1c5b}{ICON\_\-WIDTH}~64
+\item 
+\#define \hyperlink{WacomIntuos4LED_8cpp_a9ab42a38d8566a57d249be8fd6a14deb}{ICON\_\-HEIGHT}~16
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const unsigned char \hyperlink{WacomIntuos4LED_8cpp_a1ddcc70a85f6cfc2854d3938c6ddc99b}{icon\_\-alt} \mbox{[}1024\mbox{]}
+\item 
+const unsigned char \hyperlink{WacomIntuos4LED_8cpp_ab69207055bc83f6f9e9e9479f58f79da}{icon\_\-arrow\_\-up} \mbox{[}1024\mbox{]}
+\item 
+const unsigned char \hyperlink{WacomIntuos4LED_8cpp_a0445f19f6da5691e0cb813d4a3347746}{icon\_\-blank} \mbox{[}1024\mbox{]}
+\item 
+const unsigned char \hyperlink{WacomIntuos4LED_8cpp_ab612167a16d22e1854615d12c6712006}{icon\_\-button\_\-1} \mbox{[}1024\mbox{]}
+\item 
+const unsigned char \hyperlink{WacomIntuos4LED_8cpp_a422f5860fb6a496c45d53bd45d5f127a}{icon\_\-button\_\-2} \mbox{[}1024\mbox{]}
+\item 
+const unsigned char \hyperlink{WacomIntuos4LED_8cpp_a49e7eeb5ca9cb2dfa11b4584d39e9276}{icon\_\-button\_\-3} \mbox{[}1024\mbox{]}
+\item 
+const unsigned char \hyperlink{WacomIntuos4LED_8cpp_a8832ec930185800c718bbb6f0cb9bde8}{icon\_\-button\_\-4} \mbox{[}1024\mbox{]}
+\item 
+const unsigned char \hyperlink{WacomIntuos4LED_8cpp_a9a457a0bceea4d76de1de408d99826eb}{icon\_\-button\_\-5} \mbox{[}1024\mbox{]}
+\item 
+const unsigned char \hyperlink{WacomIntuos4LED_8cpp_a30a14d3b593bbb5cbba5ead290735e10}{icon\_\-button\_\-6} \mbox{[}1024\mbox{]}
+\item 
+const unsigned char \hyperlink{WacomIntuos4LED_8cpp_a0f19da55b0e76360dbfc3a3eda2ae36b}{icon\_\-button\_\-7} \mbox{[}1024\mbox{]}
+\item 
+const unsigned char \hyperlink{WacomIntuos4LED_8cpp_a6a41a780e29408a36da9094a5e69f75b}{icon\_\-button\_\-8} \mbox{[}1024\mbox{]}
+\item 
+const unsigned char \hyperlink{WacomIntuos4LED_8cpp_a5b86279edf6bf37c4d09017cfb4837f5}{icon\_\-ctrl} \mbox{[}1024\mbox{]}
+\item 
+const unsigned char \hyperlink{WacomIntuos4LED_8cpp_a02dd0f36165f5b744b8cb2b829d2b1fe}{icon\_\-debian\_\-logo} \mbox{[}1024\mbox{]}
+\item 
+const unsigned char \hyperlink{WacomIntuos4LED_8cpp_a59017d8f2c02ed53ed3f15a17cc2d7d9}{icon\_\-number\_\-1} \mbox{[}1024\mbox{]}
+\item 
+const unsigned char \hyperlink{WacomIntuos4LED_8cpp_aa3b99e3bd496d3ae8f4fdb2f5de2b6c7}{icon\_\-number\_\-2} \mbox{[}1024\mbox{]}
+\item 
+const unsigned char \hyperlink{WacomIntuos4LED_8cpp_a3afb399fd178161593312b423485b484}{icon\_\-number\_\-3} \mbox{[}1024\mbox{]}
+\item 
+const unsigned char \hyperlink{WacomIntuos4LED_8cpp_af918c360c5dfbbb2a7fdab0665097ccc}{icon\_\-number\_\-4} \mbox{[}1024\mbox{]}
+\item 
+const unsigned char \hyperlink{WacomIntuos4LED_8cpp_a897ff7dbf0038010a2d5ab82fbc11cac}{icon\_\-number\_\-5} \mbox{[}1024\mbox{]}
+\item 
+const unsigned char \hyperlink{WacomIntuos4LED_8cpp_a3938a5aab1f6102624678f8501264282}{icon\_\-number\_\-6} \mbox{[}1024\mbox{]}
+\item 
+const unsigned char \hyperlink{WacomIntuos4LED_8cpp_ad84ca85db0693f4ef7b24bc4afeb426b}{icon\_\-number\_\-7} \mbox{[}1024\mbox{]}
+\item 
+const unsigned char \hyperlink{WacomIntuos4LED_8cpp_a7edbf6f1e8dc7eed2763aeadfe58f8cb}{icon\_\-number\_\-8} \mbox{[}1024\mbox{]}
+\item 
+const unsigned char \hyperlink{WacomIntuos4LED_8cpp_adc94f0e59a5f4bdba4e25ace3956dc91}{icon\_\-redo} \mbox{[}1024\mbox{]}
+\item 
+const unsigned char \hyperlink{WacomIntuos4LED_8cpp_a00692710e0bded3f0db4fb183f14e383}{icon\_\-save} \mbox{[}1024\mbox{]}
+\item 
+const unsigned char \hyperlink{WacomIntuos4LED_8cpp_a64ebaf8d8ae0d3634a3cf9a12e7ac7d6}{icon\_\-shift} \mbox{[}1024\mbox{]}
+\item 
+const unsigned char \hyperlink{WacomIntuos4LED_8cpp_a8759e5d1eb284f6c51521704383b7be5}{icon\_\-space} \mbox{[}1024\mbox{]}
+\item 
+const unsigned char \hyperlink{WacomIntuos4LED_8cpp_aa5ff7627c22ea5df34993f873216d9f6}{icon\_\-tux} \mbox{[}1024\mbox{]}
+\item 
+const unsigned char \hyperlink{WacomIntuos4LED_8cpp_abd3b867896d41ef0b2ff35c632ffcefa}{icon\_\-undo} \mbox{[}1024\mbox{]}
+\item 
+const unsigned char \hyperlink{WacomIntuos4LED_8cpp_a0114745801c33f8ba9caf11459c3fd66}{icon\_\-wacom\_\-logo} \mbox{[}1024\mbox{]}
+\item 
+const unsigned char \hyperlink{WacomIntuos4LED_8cpp_a9e90f8fe022ee1a22f8ad20a8350d2ae}{icon\_\-zoom\_\-in} \mbox{[}1024\mbox{]}
+\item 
+const unsigned char \hyperlink{WacomIntuos4LED_8cpp_a26211afc32367ba926dbfb3d448d27cf}{icon\_\-zoom\_\-out} \mbox{[}1024\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\subsection{Define Documentation}
+\hypertarget{WacomIntuos4LED_8cpp_a9ab42a38d8566a57d249be8fd6a14deb}{
+\index{WacomIntuos4LED.cpp@{WacomIntuos4LED.cpp}!ICON\_\-HEIGHT@{ICON\_\-HEIGHT}}
+\index{ICON\_\-HEIGHT@{ICON\_\-HEIGHT}!WacomIntuos4LED.cpp@{WacomIntuos4LED.cpp}}
+\subsubsection[{ICON\_\-HEIGHT}]{\setlength{\rightskip}{0pt plus 5cm}\#define ICON\_\-HEIGHT~16}}
+\label{WacomIntuos4LED_8cpp_a9ab42a38d8566a57d249be8fd6a14deb}
+
+
+Definition at line 23 of file WacomIntuos4LED.cpp.
+
+\hypertarget{WacomIntuos4LED_8cpp_a6b1962cabecee5c5d03bd5e6024e1c5b}{
+\index{WacomIntuos4LED.cpp@{WacomIntuos4LED.cpp}!ICON\_\-WIDTH@{ICON\_\-WIDTH}}
+\index{ICON\_\-WIDTH@{ICON\_\-WIDTH}!WacomIntuos4LED.cpp@{WacomIntuos4LED.cpp}}
+\subsubsection[{ICON\_\-WIDTH}]{\setlength{\rightskip}{0pt plus 5cm}\#define ICON\_\-WIDTH~64}}
+\label{WacomIntuos4LED_8cpp_a6b1962cabecee5c5d03bd5e6024e1c5b}
+
+
+Definition at line 22 of file WacomIntuos4LED.cpp.
+
+\hypertarget{WacomIntuos4LED_8cpp_a5e33d08046942bb82bd28a4dc08e75f9}{
+\index{WacomIntuos4LED.cpp@{WacomIntuos4LED.cpp}!WAC\_\-INTUOS4\_\-M\_\-PRODUCT\_\-ID@{WAC\_\-INTUOS4\_\-M\_\-PRODUCT\_\-ID}}
+\index{WAC\_\-INTUOS4\_\-M\_\-PRODUCT\_\-ID@{WAC\_\-INTUOS4\_\-M\_\-PRODUCT\_\-ID}!WacomIntuos4LED.cpp@{WacomIntuos4LED.cpp}}
+\subsubsection[{WAC\_\-INTUOS4\_\-M\_\-PRODUCT\_\-ID}]{\setlength{\rightskip}{0pt plus 5cm}\#define WAC\_\-INTUOS4\_\-M\_\-PRODUCT\_\-ID~0x00b9}}
+\label{WacomIntuos4LED_8cpp_a5e33d08046942bb82bd28a4dc08e75f9}
+
+
+Definition at line 19 of file WacomIntuos4LED.cpp.
+
+\hypertarget{WacomIntuos4LED_8cpp_a5138e4f2746ee434ae1df4b89c309609}{
+\index{WacomIntuos4LED.cpp@{WacomIntuos4LED.cpp}!WAC\_\-USB\_\-RETRIES@{WAC\_\-USB\_\-RETRIES}}
+\index{WAC\_\-USB\_\-RETRIES@{WAC\_\-USB\_\-RETRIES}!WacomIntuos4LED.cpp@{WacomIntuos4LED.cpp}}
+\subsubsection[{WAC\_\-USB\_\-RETRIES}]{\setlength{\rightskip}{0pt plus 5cm}\#define WAC\_\-USB\_\-RETRIES~10}}
+\label{WacomIntuos4LED_8cpp_a5138e4f2746ee434ae1df4b89c309609}
+
+
+Definition at line 21 of file WacomIntuos4LED.cpp.
+
+\hypertarget{WacomIntuos4LED_8cpp_a59446ac297d2023cf3cdbf18036b3d27}{
+\index{WacomIntuos4LED.cpp@{WacomIntuos4LED.cpp}!WAC\_\-USB\_\-TIMEOUT@{WAC\_\-USB\_\-TIMEOUT}}
+\index{WAC\_\-USB\_\-TIMEOUT@{WAC\_\-USB\_\-TIMEOUT}!WacomIntuos4LED.cpp@{WacomIntuos4LED.cpp}}
+\subsubsection[{WAC\_\-USB\_\-TIMEOUT}]{\setlength{\rightskip}{0pt plus 5cm}\#define WAC\_\-USB\_\-TIMEOUT~100}}
+\label{WacomIntuos4LED_8cpp_a59446ac297d2023cf3cdbf18036b3d27}
+
+
+Definition at line 20 of file WacomIntuos4LED.cpp.
+
+\hypertarget{WacomIntuos4LED_8cpp_a9dcd3970f390800b49f905f2943bc4fd}{
+\index{WacomIntuos4LED.cpp@{WacomIntuos4LED.cpp}!WAC\_\-VENDOR\_\-ID@{WAC\_\-VENDOR\_\-ID}}
+\index{WAC\_\-VENDOR\_\-ID@{WAC\_\-VENDOR\_\-ID}!WacomIntuos4LED.cpp@{WacomIntuos4LED.cpp}}
+\subsubsection[{WAC\_\-VENDOR\_\-ID}]{\setlength{\rightskip}{0pt plus 5cm}\#define WAC\_\-VENDOR\_\-ID~0x056a}}
+\label{WacomIntuos4LED_8cpp_a9dcd3970f390800b49f905f2943bc4fd}
+
+
+Definition at line 18 of file WacomIntuos4LED.cpp.
+
+
+
+\subsection{Variable Documentation}
+\hypertarget{WacomIntuos4LED_8cpp_a1ddcc70a85f6cfc2854d3938c6ddc99b}{
+\index{WacomIntuos4LED.cpp@{WacomIntuos4LED.cpp}!icon\_\-alt@{icon\_\-alt}}
+\index{icon\_\-alt@{icon\_\-alt}!WacomIntuos4LED.cpp@{WacomIntuos4LED.cpp}}
+\subsubsection[{icon\_\-alt}]{\setlength{\rightskip}{0pt plus 5cm}const unsigned char {\bf icon\_\-alt}\mbox{[}1024\mbox{]}}}
+\label{WacomIntuos4LED_8cpp_a1ddcc70a85f6cfc2854d3938c6ddc99b}
+
+
+Definition at line 8 of file icon-\/library.cpp.
+
+\hypertarget{WacomIntuos4LED_8cpp_ab69207055bc83f6f9e9e9479f58f79da}{
+\index{WacomIntuos4LED.cpp@{WacomIntuos4LED.cpp}!icon\_\-arrow\_\-up@{icon\_\-arrow\_\-up}}
+\index{icon\_\-arrow\_\-up@{icon\_\-arrow\_\-up}!WacomIntuos4LED.cpp@{WacomIntuos4LED.cpp}}
+\subsubsection[{icon\_\-arrow\_\-up}]{\setlength{\rightskip}{0pt plus 5cm}const unsigned char {\bf icon\_\-arrow\_\-up}\mbox{[}1024\mbox{]}}}
+\label{WacomIntuos4LED_8cpp_ab69207055bc83f6f9e9e9479f58f79da}
+
+
+Definition at line 75 of file icon-\/library.cpp.
+
+\hypertarget{WacomIntuos4LED_8cpp_a0445f19f6da5691e0cb813d4a3347746}{
+\index{WacomIntuos4LED.cpp@{WacomIntuos4LED.cpp}!icon\_\-blank@{icon\_\-blank}}
+\index{icon\_\-blank@{icon\_\-blank}!WacomIntuos4LED.cpp@{WacomIntuos4LED.cpp}}
+\subsubsection[{icon\_\-blank}]{\setlength{\rightskip}{0pt plus 5cm}const unsigned char {\bf icon\_\-blank}\mbox{[}1024\mbox{]}}}
+\label{WacomIntuos4LED_8cpp_a0445f19f6da5691e0cb813d4a3347746}
+
+
+Definition at line 142 of file icon-\/library.cpp.
+
+\hypertarget{WacomIntuos4LED_8cpp_ab612167a16d22e1854615d12c6712006}{
+\index{WacomIntuos4LED.cpp@{WacomIntuos4LED.cpp}!icon\_\-button\_\-1@{icon\_\-button\_\-1}}
+\index{icon\_\-button\_\-1@{icon\_\-button\_\-1}!WacomIntuos4LED.cpp@{WacomIntuos4LED.cpp}}
+\subsubsection[{icon\_\-button\_\-1}]{\setlength{\rightskip}{0pt plus 5cm}const unsigned char {\bf icon\_\-button\_\-1}\mbox{[}1024\mbox{]}}}
+\label{WacomIntuos4LED_8cpp_ab612167a16d22e1854615d12c6712006}
+
+
+Definition at line 209 of file icon-\/library.cpp.
+
+\hypertarget{WacomIntuos4LED_8cpp_a422f5860fb6a496c45d53bd45d5f127a}{
+\index{WacomIntuos4LED.cpp@{WacomIntuos4LED.cpp}!icon\_\-button\_\-2@{icon\_\-button\_\-2}}
+\index{icon\_\-button\_\-2@{icon\_\-button\_\-2}!WacomIntuos4LED.cpp@{WacomIntuos4LED.cpp}}
+\subsubsection[{icon\_\-button\_\-2}]{\setlength{\rightskip}{0pt plus 5cm}const unsigned char {\bf icon\_\-button\_\-2}\mbox{[}1024\mbox{]}}}
+\label{WacomIntuos4LED_8cpp_a422f5860fb6a496c45d53bd45d5f127a}
+
+
+Definition at line 275 of file icon-\/library.cpp.
+
+\hypertarget{WacomIntuos4LED_8cpp_a49e7eeb5ca9cb2dfa11b4584d39e9276}{
+\index{WacomIntuos4LED.cpp@{WacomIntuos4LED.cpp}!icon\_\-button\_\-3@{icon\_\-button\_\-3}}
+\index{icon\_\-button\_\-3@{icon\_\-button\_\-3}!WacomIntuos4LED.cpp@{WacomIntuos4LED.cpp}}
+\subsubsection[{icon\_\-button\_\-3}]{\setlength{\rightskip}{0pt plus 5cm}const unsigned char {\bf icon\_\-button\_\-3}\mbox{[}1024\mbox{]}}}
+\label{WacomIntuos4LED_8cpp_a49e7eeb5ca9cb2dfa11b4584d39e9276}
+
+
+Definition at line 341 of file icon-\/library.cpp.
+
+\hypertarget{WacomIntuos4LED_8cpp_a8832ec930185800c718bbb6f0cb9bde8}{
+\index{WacomIntuos4LED.cpp@{WacomIntuos4LED.cpp}!icon\_\-button\_\-4@{icon\_\-button\_\-4}}
+\index{icon\_\-button\_\-4@{icon\_\-button\_\-4}!WacomIntuos4LED.cpp@{WacomIntuos4LED.cpp}}
+\subsubsection[{icon\_\-button\_\-4}]{\setlength{\rightskip}{0pt plus 5cm}const unsigned char {\bf icon\_\-button\_\-4}\mbox{[}1024\mbox{]}}}
+\label{WacomIntuos4LED_8cpp_a8832ec930185800c718bbb6f0cb9bde8}
+
+
+Definition at line 407 of file icon-\/library.cpp.
+
+\hypertarget{WacomIntuos4LED_8cpp_a9a457a0bceea4d76de1de408d99826eb}{
+\index{WacomIntuos4LED.cpp@{WacomIntuos4LED.cpp}!icon\_\-button\_\-5@{icon\_\-button\_\-5}}
+\index{icon\_\-button\_\-5@{icon\_\-button\_\-5}!WacomIntuos4LED.cpp@{WacomIntuos4LED.cpp}}
+\subsubsection[{icon\_\-button\_\-5}]{\setlength{\rightskip}{0pt plus 5cm}const unsigned char {\bf icon\_\-button\_\-5}\mbox{[}1024\mbox{]}}}
+\label{WacomIntuos4LED_8cpp_a9a457a0bceea4d76de1de408d99826eb}
+
+
+Definition at line 473 of file icon-\/library.cpp.
+
+\hypertarget{WacomIntuos4LED_8cpp_a30a14d3b593bbb5cbba5ead290735e10}{
+\index{WacomIntuos4LED.cpp@{WacomIntuos4LED.cpp}!icon\_\-button\_\-6@{icon\_\-button\_\-6}}
+\index{icon\_\-button\_\-6@{icon\_\-button\_\-6}!WacomIntuos4LED.cpp@{WacomIntuos4LED.cpp}}
+\subsubsection[{icon\_\-button\_\-6}]{\setlength{\rightskip}{0pt plus 5cm}const unsigned char {\bf icon\_\-button\_\-6}\mbox{[}1024\mbox{]}}}
+\label{WacomIntuos4LED_8cpp_a30a14d3b593bbb5cbba5ead290735e10}
+
+
+Definition at line 539 of file icon-\/library.cpp.
+
+\hypertarget{WacomIntuos4LED_8cpp_a0f19da55b0e76360dbfc3a3eda2ae36b}{
+\index{WacomIntuos4LED.cpp@{WacomIntuos4LED.cpp}!icon\_\-button\_\-7@{icon\_\-button\_\-7}}
+\index{icon\_\-button\_\-7@{icon\_\-button\_\-7}!WacomIntuos4LED.cpp@{WacomIntuos4LED.cpp}}
+\subsubsection[{icon\_\-button\_\-7}]{\setlength{\rightskip}{0pt plus 5cm}const unsigned char {\bf icon\_\-button\_\-7}\mbox{[}1024\mbox{]}}}
+\label{WacomIntuos4LED_8cpp_a0f19da55b0e76360dbfc3a3eda2ae36b}
+
+
+Definition at line 605 of file icon-\/library.cpp.
+
+\hypertarget{WacomIntuos4LED_8cpp_a6a41a780e29408a36da9094a5e69f75b}{
+\index{WacomIntuos4LED.cpp@{WacomIntuos4LED.cpp}!icon\_\-button\_\-8@{icon\_\-button\_\-8}}
+\index{icon\_\-button\_\-8@{icon\_\-button\_\-8}!WacomIntuos4LED.cpp@{WacomIntuos4LED.cpp}}
+\subsubsection[{icon\_\-button\_\-8}]{\setlength{\rightskip}{0pt plus 5cm}const unsigned char {\bf icon\_\-button\_\-8}\mbox{[}1024\mbox{]}}}
+\label{WacomIntuos4LED_8cpp_a6a41a780e29408a36da9094a5e69f75b}
+
+
+Definition at line 671 of file icon-\/library.cpp.
+
+\hypertarget{WacomIntuos4LED_8cpp_a5b86279edf6bf37c4d09017cfb4837f5}{
+\index{WacomIntuos4LED.cpp@{WacomIntuos4LED.cpp}!icon\_\-ctrl@{icon\_\-ctrl}}
+\index{icon\_\-ctrl@{icon\_\-ctrl}!WacomIntuos4LED.cpp@{WacomIntuos4LED.cpp}}
+\subsubsection[{icon\_\-ctrl}]{\setlength{\rightskip}{0pt plus 5cm}const unsigned char {\bf icon\_\-ctrl}\mbox{[}1024\mbox{]}}}
+\label{WacomIntuos4LED_8cpp_a5b86279edf6bf37c4d09017cfb4837f5}
+
+
+Definition at line 738 of file icon-\/library.cpp.
+
+\hypertarget{WacomIntuos4LED_8cpp_a02dd0f36165f5b744b8cb2b829d2b1fe}{
+\index{WacomIntuos4LED.cpp@{WacomIntuos4LED.cpp}!icon\_\-debian\_\-logo@{icon\_\-debian\_\-logo}}
+\index{icon\_\-debian\_\-logo@{icon\_\-debian\_\-logo}!WacomIntuos4LED.cpp@{WacomIntuos4LED.cpp}}
+\subsubsection[{icon\_\-debian\_\-logo}]{\setlength{\rightskip}{0pt plus 5cm}const unsigned char {\bf icon\_\-debian\_\-logo}\mbox{[}1024\mbox{]}}}
+\label{WacomIntuos4LED_8cpp_a02dd0f36165f5b744b8cb2b829d2b1fe}
+
+
+Definition at line 805 of file icon-\/library.cpp.
+
+\hypertarget{WacomIntuos4LED_8cpp_a59017d8f2c02ed53ed3f15a17cc2d7d9}{
+\index{WacomIntuos4LED.cpp@{WacomIntuos4LED.cpp}!icon\_\-number\_\-1@{icon\_\-number\_\-1}}
+\index{icon\_\-number\_\-1@{icon\_\-number\_\-1}!WacomIntuos4LED.cpp@{WacomIntuos4LED.cpp}}
+\subsubsection[{icon\_\-number\_\-1}]{\setlength{\rightskip}{0pt plus 5cm}const unsigned char {\bf icon\_\-number\_\-1}\mbox{[}1024\mbox{]}}}
+\label{WacomIntuos4LED_8cpp_a59017d8f2c02ed53ed3f15a17cc2d7d9}
+
+
+Definition at line 872 of file icon-\/library.cpp.
+
+\hypertarget{WacomIntuos4LED_8cpp_aa3b99e3bd496d3ae8f4fdb2f5de2b6c7}{
+\index{WacomIntuos4LED.cpp@{WacomIntuos4LED.cpp}!icon\_\-number\_\-2@{icon\_\-number\_\-2}}
+\index{icon\_\-number\_\-2@{icon\_\-number\_\-2}!WacomIntuos4LED.cpp@{WacomIntuos4LED.cpp}}
+\subsubsection[{icon\_\-number\_\-2}]{\setlength{\rightskip}{0pt plus 5cm}const unsigned char {\bf icon\_\-number\_\-2}\mbox{[}1024\mbox{]}}}
+\label{WacomIntuos4LED_8cpp_aa3b99e3bd496d3ae8f4fdb2f5de2b6c7}
+
+
+Definition at line 938 of file icon-\/library.cpp.
+
+\hypertarget{WacomIntuos4LED_8cpp_a3afb399fd178161593312b423485b484}{
+\index{WacomIntuos4LED.cpp@{WacomIntuos4LED.cpp}!icon\_\-number\_\-3@{icon\_\-number\_\-3}}
+\index{icon\_\-number\_\-3@{icon\_\-number\_\-3}!WacomIntuos4LED.cpp@{WacomIntuos4LED.cpp}}
+\subsubsection[{icon\_\-number\_\-3}]{\setlength{\rightskip}{0pt plus 5cm}const unsigned char {\bf icon\_\-number\_\-3}\mbox{[}1024\mbox{]}}}
+\label{WacomIntuos4LED_8cpp_a3afb399fd178161593312b423485b484}
+
+
+Definition at line 1004 of file icon-\/library.cpp.
+
+\hypertarget{WacomIntuos4LED_8cpp_af918c360c5dfbbb2a7fdab0665097ccc}{
+\index{WacomIntuos4LED.cpp@{WacomIntuos4LED.cpp}!icon\_\-number\_\-4@{icon\_\-number\_\-4}}
+\index{icon\_\-number\_\-4@{icon\_\-number\_\-4}!WacomIntuos4LED.cpp@{WacomIntuos4LED.cpp}}
+\subsubsection[{icon\_\-number\_\-4}]{\setlength{\rightskip}{0pt plus 5cm}const unsigned char {\bf icon\_\-number\_\-4}\mbox{[}1024\mbox{]}}}
+\label{WacomIntuos4LED_8cpp_af918c360c5dfbbb2a7fdab0665097ccc}
+
+
+Definition at line 1070 of file icon-\/library.cpp.
+
+\hypertarget{WacomIntuos4LED_8cpp_a897ff7dbf0038010a2d5ab82fbc11cac}{
+\index{WacomIntuos4LED.cpp@{WacomIntuos4LED.cpp}!icon\_\-number\_\-5@{icon\_\-number\_\-5}}
+\index{icon\_\-number\_\-5@{icon\_\-number\_\-5}!WacomIntuos4LED.cpp@{WacomIntuos4LED.cpp}}
+\subsubsection[{icon\_\-number\_\-5}]{\setlength{\rightskip}{0pt plus 5cm}const unsigned char {\bf icon\_\-number\_\-5}\mbox{[}1024\mbox{]}}}
+\label{WacomIntuos4LED_8cpp_a897ff7dbf0038010a2d5ab82fbc11cac}
+
+
+Definition at line 1136 of file icon-\/library.cpp.
+
+\hypertarget{WacomIntuos4LED_8cpp_a3938a5aab1f6102624678f8501264282}{
+\index{WacomIntuos4LED.cpp@{WacomIntuos4LED.cpp}!icon\_\-number\_\-6@{icon\_\-number\_\-6}}
+\index{icon\_\-number\_\-6@{icon\_\-number\_\-6}!WacomIntuos4LED.cpp@{WacomIntuos4LED.cpp}}
+\subsubsection[{icon\_\-number\_\-6}]{\setlength{\rightskip}{0pt plus 5cm}const unsigned char {\bf icon\_\-number\_\-6}\mbox{[}1024\mbox{]}}}
+\label{WacomIntuos4LED_8cpp_a3938a5aab1f6102624678f8501264282}
+
+
+Definition at line 1202 of file icon-\/library.cpp.
+
+\hypertarget{WacomIntuos4LED_8cpp_ad84ca85db0693f4ef7b24bc4afeb426b}{
+\index{WacomIntuos4LED.cpp@{WacomIntuos4LED.cpp}!icon\_\-number\_\-7@{icon\_\-number\_\-7}}
+\index{icon\_\-number\_\-7@{icon\_\-number\_\-7}!WacomIntuos4LED.cpp@{WacomIntuos4LED.cpp}}
+\subsubsection[{icon\_\-number\_\-7}]{\setlength{\rightskip}{0pt plus 5cm}const unsigned char {\bf icon\_\-number\_\-7}\mbox{[}1024\mbox{]}}}
+\label{WacomIntuos4LED_8cpp_ad84ca85db0693f4ef7b24bc4afeb426b}
+
+
+Definition at line 1268 of file icon-\/library.cpp.
+
+\hypertarget{WacomIntuos4LED_8cpp_a7edbf6f1e8dc7eed2763aeadfe58f8cb}{
+\index{WacomIntuos4LED.cpp@{WacomIntuos4LED.cpp}!icon\_\-number\_\-8@{icon\_\-number\_\-8}}
+\index{icon\_\-number\_\-8@{icon\_\-number\_\-8}!WacomIntuos4LED.cpp@{WacomIntuos4LED.cpp}}
+\subsubsection[{icon\_\-number\_\-8}]{\setlength{\rightskip}{0pt plus 5cm}const unsigned char {\bf icon\_\-number\_\-8}\mbox{[}1024\mbox{]}}}
+\label{WacomIntuos4LED_8cpp_a7edbf6f1e8dc7eed2763aeadfe58f8cb}
+
+
+Definition at line 1334 of file icon-\/library.cpp.
+
+\hypertarget{WacomIntuos4LED_8cpp_adc94f0e59a5f4bdba4e25ace3956dc91}{
+\index{WacomIntuos4LED.cpp@{WacomIntuos4LED.cpp}!icon\_\-redo@{icon\_\-redo}}
+\index{icon\_\-redo@{icon\_\-redo}!WacomIntuos4LED.cpp@{WacomIntuos4LED.cpp}}
+\subsubsection[{icon\_\-redo}]{\setlength{\rightskip}{0pt plus 5cm}const unsigned char {\bf icon\_\-redo}\mbox{[}1024\mbox{]}}}
+\label{WacomIntuos4LED_8cpp_adc94f0e59a5f4bdba4e25ace3956dc91}
+
+
+Definition at line 1555 of file icon-\/library.cpp.
+
+\hypertarget{WacomIntuos4LED_8cpp_a00692710e0bded3f0db4fb183f14e383}{
+\index{WacomIntuos4LED.cpp@{WacomIntuos4LED.cpp}!icon\_\-save@{icon\_\-save}}
+\index{icon\_\-save@{icon\_\-save}!WacomIntuos4LED.cpp@{WacomIntuos4LED.cpp}}
+\subsubsection[{icon\_\-save}]{\setlength{\rightskip}{0pt plus 5cm}const unsigned char {\bf icon\_\-save}\mbox{[}1024\mbox{]}}}
+\label{WacomIntuos4LED_8cpp_a00692710e0bded3f0db4fb183f14e383}
+
+
+Definition at line 1401 of file icon-\/library.cpp.
+
+\hypertarget{WacomIntuos4LED_8cpp_a64ebaf8d8ae0d3634a3cf9a12e7ac7d6}{
+\index{WacomIntuos4LED.cpp@{WacomIntuos4LED.cpp}!icon\_\-shift@{icon\_\-shift}}
+\index{icon\_\-shift@{icon\_\-shift}!WacomIntuos4LED.cpp@{WacomIntuos4LED.cpp}}
+\subsubsection[{icon\_\-shift}]{\setlength{\rightskip}{0pt plus 5cm}const unsigned char {\bf icon\_\-shift}\mbox{[}1024\mbox{]}}}
+\label{WacomIntuos4LED_8cpp_a64ebaf8d8ae0d3634a3cf9a12e7ac7d6}
+
+
+Definition at line 1488 of file icon-\/library.cpp.
+
+\hypertarget{WacomIntuos4LED_8cpp_a8759e5d1eb284f6c51521704383b7be5}{
+\index{WacomIntuos4LED.cpp@{WacomIntuos4LED.cpp}!icon\_\-space@{icon\_\-space}}
+\index{icon\_\-space@{icon\_\-space}!WacomIntuos4LED.cpp@{WacomIntuos4LED.cpp}}
+\subsubsection[{icon\_\-space}]{\setlength{\rightskip}{0pt plus 5cm}const unsigned char {\bf icon\_\-space}\mbox{[}1024\mbox{]}}}
+\label{WacomIntuos4LED_8cpp_a8759e5d1eb284f6c51521704383b7be5}
+
+
+Definition at line 1977 of file icon-\/library.cpp.
+
+\hypertarget{WacomIntuos4LED_8cpp_aa5ff7627c22ea5df34993f873216d9f6}{
+\index{WacomIntuos4LED.cpp@{WacomIntuos4LED.cpp}!icon\_\-tux@{icon\_\-tux}}
+\index{icon\_\-tux@{icon\_\-tux}!WacomIntuos4LED.cpp@{WacomIntuos4LED.cpp}}
+\subsubsection[{icon\_\-tux}]{\setlength{\rightskip}{0pt plus 5cm}const unsigned char {\bf icon\_\-tux}\mbox{[}1024\mbox{]}}}
+\label{WacomIntuos4LED_8cpp_aa5ff7627c22ea5df34993f873216d9f6}
+
+
+Definition at line 1622 of file icon-\/library.cpp.
+
+\hypertarget{WacomIntuos4LED_8cpp_abd3b867896d41ef0b2ff35c632ffcefa}{
+\index{WacomIntuos4LED.cpp@{WacomIntuos4LED.cpp}!icon\_\-undo@{icon\_\-undo}}
+\index{icon\_\-undo@{icon\_\-undo}!WacomIntuos4LED.cpp@{WacomIntuos4LED.cpp}}
+\subsubsection[{icon\_\-undo}]{\setlength{\rightskip}{0pt plus 5cm}const unsigned char {\bf icon\_\-undo}\mbox{[}1024\mbox{]}}}
+\label{WacomIntuos4LED_8cpp_abd3b867896d41ef0b2ff35c632ffcefa}
+
+
+Definition at line 1709 of file icon-\/library.cpp.
+
+\hypertarget{WacomIntuos4LED_8cpp_a0114745801c33f8ba9caf11459c3fd66}{
+\index{WacomIntuos4LED.cpp@{WacomIntuos4LED.cpp}!icon\_\-wacom\_\-logo@{icon\_\-wacom\_\-logo}}
+\index{icon\_\-wacom\_\-logo@{icon\_\-wacom\_\-logo}!WacomIntuos4LED.cpp@{WacomIntuos4LED.cpp}}
+\subsubsection[{icon\_\-wacom\_\-logo}]{\setlength{\rightskip}{0pt plus 5cm}const unsigned char {\bf icon\_\-wacom\_\-logo}\mbox{[}1024\mbox{]}}}
+\label{WacomIntuos4LED_8cpp_a0114745801c33f8ba9caf11459c3fd66}
+
+
+Definition at line 1910 of file icon-\/library.cpp.
+
+\hypertarget{WacomIntuos4LED_8cpp_a9e90f8fe022ee1a22f8ad20a8350d2ae}{
+\index{WacomIntuos4LED.cpp@{WacomIntuos4LED.cpp}!icon\_\-zoom\_\-in@{icon\_\-zoom\_\-in}}
+\index{icon\_\-zoom\_\-in@{icon\_\-zoom\_\-in}!WacomIntuos4LED.cpp@{WacomIntuos4LED.cpp}}
+\subsubsection[{icon\_\-zoom\_\-in}]{\setlength{\rightskip}{0pt plus 5cm}const unsigned char {\bf icon\_\-zoom\_\-in}\mbox{[}1024\mbox{]}}}
+\label{WacomIntuos4LED_8cpp_a9e90f8fe022ee1a22f8ad20a8350d2ae}
+
+
+Definition at line 1776 of file icon-\/library.cpp.
+
+\hypertarget{WacomIntuos4LED_8cpp_a26211afc32367ba926dbfb3d448d27cf}{
+\index{WacomIntuos4LED.cpp@{WacomIntuos4LED.cpp}!icon\_\-zoom\_\-out@{icon\_\-zoom\_\-out}}
+\index{icon\_\-zoom\_\-out@{icon\_\-zoom\_\-out}!WacomIntuos4LED.cpp@{WacomIntuos4LED.cpp}}
+\subsubsection[{icon\_\-zoom\_\-out}]{\setlength{\rightskip}{0pt plus 5cm}const unsigned char {\bf icon\_\-zoom\_\-out}\mbox{[}1024\mbox{]}}}
+\label{WacomIntuos4LED_8cpp_a26211afc32367ba926dbfb3d448d27cf}
+
+
+Definition at line 1843 of file icon-\/library.cpp.
+

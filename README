@@ -1,0 +1,67 @@
+Software to set the led display of the Wacom Intuos4 tablet
+===========================================================
+
+Features
+========
+
+1. The app uses libusb to communicate with the tablet.
+2. Images are converted to an appropriate format under usage of the Magick
+library.
+3. The app contains an icon library. These icons can be used directly for
+configuration the tablet display.
+
+Pros:
+-----
+- Easy to use
+- no kernel patch needed, i.e., works with the standard kernel
+
+Cons:
+-----
+- must be root to execute the software
+- the wacom driver must be reloaded after usage of the software
+- works only with the Intuos4 M tablet (since I don't know the vendor and
+product ids of the other Intuos 4 tablets).
+
+Installation
+============
+
+To compile the sources, GNU C++ and the USB 1.0 and Magick++ libraries are
+needed. Under Debian they are installed as follows:
+
+apt-get install g++
+apt-get install libusb-1.0-0-dev
+apt-get install libmagick++-dev
+
+To compile the sources, change to the src directory and invoke make.
+
+USAGE
+=====
+
+1. Perform a tablet led check:
+
+	sudo intuos4-led-check
+
+2. Output a list of all icons included in the library:
+
+       sudo intuos4-led-config --list
+
+3. Upload the library icon "WacomLogo" to the second button of the tablet:
+
+       sudo intuos4-led-config --button 2 --icon WacomLogo
+
+If you are left-handed, use the option --lefthanded to change the orientation
+of the tablet.
+
+4. Upload an image to the fifth button of the tablet:
+
+       sudo intuos4-led-config --button 5 --image ../icons/icon-nikon.png
+
+The image must have a resolution of 64x32 pixels.
+
+5. Example of the combination of intuos4-led-config and xsetwacom:
+
+       init-intuos4-tablet.sh
+
+
+
+Christoph Karg <christoph@kargulus.de>

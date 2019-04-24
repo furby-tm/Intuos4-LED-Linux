@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="210mm"
+   height="297mm"
+   id="svg2"
+   version="1.1"
+   inkscape:version="0.47 r22583"
+   sodipodi:docname="icons.svg">
+  <defs
+     id="defs4">
+    <inkscape:perspective
+       sodipodi:type="inkscape:persp3d"
+       inkscape:vp_x="0 : 526.18109 : 1"
+       inkscape:vp_y="0 : 1000 : 0"
+       inkscape:vp_z="744.09448 : 526.18109 : 1"
+       inkscape:persp3d-origin="372.04724 : 350.78739 : 1"
+       id="perspective10" />
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="4.3299648"
+     inkscape:cx="303.81025"
+     inkscape:cy="888.74994"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     inkscape:window-width="1440"
+     inkscape:window-height="841"
+     inkscape:window-x="-4"
+     inkscape:window-y="-3"
+     inkscape:window-maximized="1" />
+  <metadata
+     id="metadata7">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Ebene 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <path
+       style="fill:#4d4d4d;fill-opacity:1;stroke:#000000;stroke-width:1.50000000000000000;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+       d="M 222.1875 168.375 C 214.19472 168.375 207.71875 174.85097 207.71875 182.84375 C 207.71875 184.6169 208.04172 186.30529 208.625 187.875 L 216.59375 184.90625 C 216.35439 184.26133 216.21875 183.57048 216.21875 182.84375 C 216.21875 179.55493 218.89868 176.90625 222.1875 176.90625 C 225.47632 176.90625 228.125 179.55493 228.125 182.84375 C 228.125 184.15098 227.67954 185.35897 226.96875 186.34375 L 233.875 191.34375 C 235.61123 188.95693 236.65625 186.0221 236.65625 182.84375 C 236.65625 174.85097 230.18028 168.375 222.1875 168.375 z "
+       id="path3685" />
+    <rect
+       style="fill:#000000;fill-opacity:1;stroke:none"
+       id="rect2816"
+       width="64"
+       height="32"
+       x="79.605263"
+       y="52.362183"
+       inkscape:export-filename="/tmp/icon-shift.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <path
+       style="fill:#808080;fill-opacity:1;stroke:#ffffff;stroke-width:1.5;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+       d="m 111.60526,58.073022 -8.9094,10.013209 3.22932,0 0,10.565113 11.369,0 0,-10.565113 3.22048,0 -8.9094,-10.013209 z"
+       id="path3602"
+       inkscape:export-filename="/tmp/icon-shift.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <rect
+       inkscape:export-ydpi="90"
+       inkscape:export-xdpi="90"
+       inkscape:export-filename="/home/chkarg/workspace/USB-Wacom/icons/icon-shift.png"
+       y="31.309551"
+       x="176.97368"
+       height="32"
+       width="64"
+       id="rect3607"
+       style="fill:#000000;fill-opacity:1;stroke:none" />
+    <path
+       inkscape:export-ydpi="90"
+       inkscape:export-xdpi="90"
+       inkscape:export-filename="/home/chkarg/workspace/USB-Wacom/icons/icon-shift.png"
+       id="path3609"
+       d="m 208.97368,37.02039 -8.9094,10.013209 3.22932,0 0,10.565113 11.369,0 0,-10.565113 3.22048,0 -8.9094,-10.013209 z"
+       style="fill:#4d4d4d;fill-opacity:1;stroke:#ffffff;stroke-width:1.5;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" />
+    <rect
+       style="fill:#000000;fill-opacity:1;stroke:none"
+       id="rect3615"
+       width="64"
+       height="32"
+       x="286.8421"
+       y="31.967445"
+       inkscape:export-filename="/home/chkarg/workspace/USB-Wacom/icons/icon-shift.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <path
+       style="fill:#000000;fill-opacity:1;stroke:#ffffff;stroke-width:1.5;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+       d="m 318.8421,37.678284 -8.9094,10.013209 3.22932,0 0,10.565113 11.369,0 0,-10.565113 3.22048,0 -8.9094,-10.013209 z"
+       id="path3617"
+       inkscape:export-filename="/home/chkarg/workspace/USB-Wacom/icons/icon-shift.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <rect
+       inkscape:export-ydpi="90"
+       inkscape:export-xdpi="90"
+       inkscape:export-filename="/home/chkarg/workspace/USB-Wacom/icons/icon-undo.png"
+       y="97.787842"
+       x="245.96417"
+       height="32"
+       width="64"
+       id="rect3674"
+       style="fill:#000000;fill-opacity:1;stroke:none" />
+    <path
+       sodipodi:type="star"
+       style="fill:#666666;fill-opacity:1;stroke:#000000;stroke-width:0.85972434;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+       id="path3690"
+       sodipodi:sides="3"
+       sodipodi:cx="297.92389"
+       sodipodi:cy="174.98784"
+       sodipodi:r1="5.9913292"
+       sodipodi:r2="2.9956646"
+       sodipodi:arg1="0.52359878"
+       sodipodi:arg2="1.5707963"
+       inkscape:flatsided="true"
+       inkscape:rounded="0"
+       inkscape:randomized="0"
+       d="m 303.11253,177.9835 -10.37728,0 5.18864,-8.98699 5.18864,8.98699 z"
+       transform="matrix(1.7622367,0,0,1.0321176,-337.48206,-14.232658)" />
+    <path
+       transform="matrix(-1.6946246,0.48345183,-0.28315102,-0.99251813,767.69164,217.14186)"
+       d="m 303.11253,177.9835 -10.37728,0 5.18864,-8.98699 5.18864,8.98699 z"
+       inkscape:randomized="0"
+       inkscape:rounded="0"
+       inkscape:flatsided="true"
+       sodipodi:arg2="1.5707963"
+       sodipodi:arg1="0.52359878"
+       sodipodi:r2="2.9956646"
+       sodipodi:r1="5.9913292"
+       sodipodi:cy="174.98784"
+       sodipodi:cx="297.92389"
+       sodipodi:sides="3"
+       id="path3694"
+       style="fill:#666666;fill-opacity:1;stroke:#000000;stroke-width:0.85972434;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+       sodipodi:type="star" />
+    <path
+       style="fill:#000000;fill-opacity:1;stroke:#ffffff;stroke-width:1.08445108;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+       d="m 282.17875,104.86235 c -5.59986,-1.42578 -11.29223,1.95616 -12.71802,7.55602 -0.18021,0.7078 -0.2746,1.4136 -0.30506,2.1138 l -3.28817,0.0953 6.78293,6.50629 6.41911,-6.89837 -3.71013,0.10446 c 0.0205,-0.13468 0.0222,-0.27019 0.0565,-0.40523 0.58668,-2.3042 2.93676,-3.68184 5.24096,-3.09517 2.30418,0.58668 3.68741,2.91487 3.10074,5.21906 -0.23319,0.91585 -0.76078,1.68273 -1.43444,2.24589 l 3.94671,4.73504 c 1.6422,-1.36251 2.89787,-3.2323 3.46484,-5.45909 1.42579,-5.59986 -1.95615,-11.29223 -7.55602,-12.71802 z"
+       id="path3697"
+       inkscape:export-filename="/home/chkarg/workspace/USB-Wacom/icons/icon-undo.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <rect
+       style="fill:#000000;fill-opacity:1;stroke:none"
+       id="rect3702"
+       width="64"
+       height="32"
+       x="285.22546"
+       y="140.51337"
+       inkscape:export-filename="/home/chkarg/workspace/USB-Wacom/icons/icon-undo.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <path
+       id="path3704"
+       d="m 320.53035,145.47269 c -7.16088,-0.98533 -13.76116,4.01825 -14.7465,11.17915 -0.12454,0.90509 -0.14264,1.79566 -0.0821,2.67027 l -4.07374,0.58056 9.34532,7.13406 7.00948,-9.47658 -4.59695,0.6512 c 0.007,-0.17028 -0.0104,-0.33897 0.0133,-0.51165 0.40544,-2.94651 3.13295,-4.98914 6.07948,-4.5837 2.94652,0.40544 4.99299,3.10497 4.58755,6.05148 -0.16115,1.17116 -0.70916,2.19851 -1.46738,2.99317 l 5.57105,5.33098 c 1.84977,-1.92436 3.14781,-4.4249 3.53964,-7.27244 0.98532,-7.16089 -4.01828,-13.76116 -11.17915,-14.74649 z"
+       style="fill:#000000;fill-opacity:1;stroke:#ffffff;stroke-width:1.35654008;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" />
+  </g>
+</svg>

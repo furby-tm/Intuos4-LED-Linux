@@ -1,0 +1,594 @@
+\hypertarget{classWacomIntuos4LED}{
+\section{WacomIntuos4LED Class Reference}
+\label{classWacomIntuos4LED}\index{WacomIntuos4LED@{WacomIntuos4LED}}
+}
+
+
+{\ttfamily \#include $<$WacomIntuos4LED.h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classWacomIntuos4LED_ab82e3d77651bd8e8e005438c74e2c83a}{WacomIntuos4LED} ()
+\item 
+\hyperlink{classWacomIntuos4LED_a05ed50e7a3d0e2c1a1fbee79242ae533}{$\sim$WacomIntuos4LED} ()
+\item 
+bool \hyperlink{classWacomIntuos4LED_adc3cd37e5820009183b5fa43578c2e76}{init} (uint16\_\-t vendor\_\-id, uint16\_\-t product\_\-id)
+\item 
+bool \hyperlink{classWacomIntuos4LED_a8340cff52f439a898b628072769e6459}{autoDetectTablet} ()
+\item 
+bool \hyperlink{classWacomIntuos4LED_a504a9363724b045d3cad0e98e19f529e}{displayPalette} (bool right\_\-handed=true)
+\item 
+bool \hyperlink{classWacomIntuos4LED_a8d9cb89c7bcb3a718d23f63e314248d3}{setLibraryIcon} (unsigned int button, const string name, bool right\_\-handed=true)
+\item 
+bool \hyperlink{classWacomIntuos4LED_af4991024e32c329e052633a286cb85ba}{setImage} (unsigned int button, const string file, bool right\_\-handed=true)
+\item 
+bool \hyperlink{classWacomIntuos4LED_af2dd2a695a643156dbc2cdd1b3023fcd}{dumpImageAsStaticData} (const string file, const string name=\char`\"{}icon\char`\"{})
+\item 
+void \hyperlink{classWacomIntuos4LED_a67ea348323f7e7ed8056c228ea02a552}{dumpIconAsStaticData} (unsigned char $\ast$icon, string name=\char`\"{}icon\char`\"{}) const 
+\item 
+bool \hyperlink{classWacomIntuos4LED_a2d8ec01dc643ae0bb4af01fc7b73b363}{clearButton} (unsigned int button, bool right\_\-handed=true)
+\item 
+bool \hyperlink{classWacomIntuos4LED_a4f180fc041b1bdc7cd700c588b1e646e}{clearAllButtons} ()
+\item 
+void \hyperlink{classWacomIntuos4LED_ad4e26d11fdf1978059b984780dd9f7e9}{dumpIconNames} () const 
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classWacomIntuos4LED_ab6fd1d732fb117cdeac89ecce1e452c7}{initIconLibrary} ()
+\item 
+int \hyperlink{classWacomIntuos4LED_aa963de95c325d024f52299e15239d637}{sendControlMsg} (uint8\_\-t bm\_\-request\_\-type, uint8\_\-t b\_\-request, uint16\_\-t w\_\-value, uint16\_\-t w\_\-index, unsigned char $\ast$data, uint16\_\-t w\_\-length, unsigned int timeout, unsigned int retries)
+\item 
+bool \hyperlink{classWacomIntuos4LED_a92b68094ddf6fb17d02a94707ee4bca3}{deviceEnabled} () const 
+\item 
+bool \hyperlink{classWacomIntuos4LED_ae75b2a53c3c54db95617d068eac9688c}{deviceDisabled} () const 
+\item 
+void \hyperlink{classWacomIntuos4LED_a7caf2972f79759408ce7d8d2667fdcd1}{flipIconVertically} (unsigned char $\ast$icon) const 
+\item 
+void \hyperlink{classWacomIntuos4LED_adcb43a6ddd0a19557cf99ddbf08aff44}{flipIconHorizontally} (unsigned char $\ast$icon) const 
+\item 
+int \hyperlink{classWacomIntuos4LED_a7c5fc8f9c08c88d61633786a04a1047e}{toIndex} (int x, int y) const 
+\item 
+unsigned char \hyperlink{classWacomIntuos4LED_a3113d983c8f690f7f2db4dbf5f0d7355}{transformShade} (double shade) const 
+\item 
+bool \hyperlink{classWacomIntuos4LED_a63439e43d482362627c9028e544ed545}{setTransferMode} (bool mode)
+\item 
+bool \hyperlink{classWacomIntuos4LED_a1bbf66f9d21ee52a107b2ba7e0cb5cef}{setIcon} (unsigned int button, const unsigned char $\ast$icon, bool right\_\-handed=true)
+\item 
+bool \hyperlink{classWacomIntuos4LED_a6e09813294c5932179d083f8cd9993f8}{imageToIcon} (const string \&file, unsigned char $\ast$icon) const 
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+libusb\_\-context $\ast$ \hyperlink{classWacomIntuos4LED_a20d7e60936642f82fc06ab227c34ee9b}{context}
+\item 
+libusb\_\-device\_\-handle $\ast$ \hyperlink{classWacomIntuos4LED_a8afbdadc8bb470ca82ac4c117f431177}{dev\_\-handle}
+\item 
+map$<$ string, const unsigned char $\ast$ $>$ \hyperlink{classWacomIntuos4LED_afaf5e54e94691f75468a57596f871ff2}{icon\_\-table}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This class provides methods to access the LED button display of the Wacom Intuos4 Tablet. 
+
+Definition at line 23 of file WacomIntuos4LED.h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classWacomIntuos4LED_ab82e3d77651bd8e8e005438c74e2c83a}{
+\index{WacomIntuos4LED@{WacomIntuos4LED}!WacomIntuos4LED@{WacomIntuos4LED}}
+\index{WacomIntuos4LED@{WacomIntuos4LED}!WacomIntuos4LED@{WacomIntuos4LED}}
+\subsubsection[{WacomIntuos4LED}]{\setlength{\rightskip}{0pt plus 5cm}WacomIntuos4LED::WacomIntuos4LED (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classWacomIntuos4LED_ab82e3d77651bd8e8e005438c74e2c83a}
+Constructor. 
+
+Definition at line 60 of file WacomIntuos4LED.cpp.
+
+\hypertarget{classWacomIntuos4LED_a05ed50e7a3d0e2c1a1fbee79242ae533}{
+\index{WacomIntuos4LED@{WacomIntuos4LED}!$\sim$WacomIntuos4LED@{$\sim$WacomIntuos4LED}}
+\index{$\sim$WacomIntuos4LED@{$\sim$WacomIntuos4LED}!WacomIntuos4LED@{WacomIntuos4LED}}
+\subsubsection[{$\sim$WacomIntuos4LED}]{\setlength{\rightskip}{0pt plus 5cm}WacomIntuos4LED::$\sim$WacomIntuos4LED (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classWacomIntuos4LED_a05ed50e7a3d0e2c1a1fbee79242ae533}
+Destructor. 
+
+Definition at line 100 of file WacomIntuos4LED.cpp.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classWacomIntuos4LED_a8340cff52f439a898b628072769e6459}{
+\index{WacomIntuos4LED@{WacomIntuos4LED}!autoDetectTablet@{autoDetectTablet}}
+\index{autoDetectTablet@{autoDetectTablet}!WacomIntuos4LED@{WacomIntuos4LED}}
+\subsubsection[{autoDetectTablet}]{\setlength{\rightskip}{0pt plus 5cm}bool WacomIntuos4LED::autoDetectTablet (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classWacomIntuos4LED_a8340cff52f439a898b628072769e6459}
+Autodetect and initialize the first tablet.
+
+\begin{DoxyReturn}{Returns}
+true, if initialization was successful, false, otherwise. 
+\end{DoxyReturn}
+
+
+Definition at line 377 of file WacomIntuos4LED.cpp.
+
+\hypertarget{classWacomIntuos4LED_a4f180fc041b1bdc7cd700c588b1e646e}{
+\index{WacomIntuos4LED@{WacomIntuos4LED}!clearAllButtons@{clearAllButtons}}
+\index{clearAllButtons@{clearAllButtons}!WacomIntuos4LED@{WacomIntuos4LED}}
+\subsubsection[{clearAllButtons}]{\setlength{\rightskip}{0pt plus 5cm}bool WacomIntuos4LED::clearAllButtons (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classWacomIntuos4LED_a4f180fc041b1bdc7cd700c588b1e646e}
+Clear the icons of all buttons.
+
+\begin{DoxyReturn}{Returns}
+true, if transmission was successful, false, otherwise. 
+\end{DoxyReturn}
+
+
+Definition at line 339 of file WacomIntuos4LED.cpp.
+
+\hypertarget{classWacomIntuos4LED_a2d8ec01dc643ae0bb4af01fc7b73b363}{
+\index{WacomIntuos4LED@{WacomIntuos4LED}!clearButton@{clearButton}}
+\index{clearButton@{clearButton}!WacomIntuos4LED@{WacomIntuos4LED}}
+\subsubsection[{clearButton}]{\setlength{\rightskip}{0pt plus 5cm}bool WacomIntuos4LED::clearButton (
+\begin{DoxyParamCaption}
+\item[{unsigned int}]{ button, }
+\item[{bool}]{ right\_\-handed = {\ttfamily true}}
+\end{DoxyParamCaption}
+)}}
+\label{classWacomIntuos4LED_a2d8ec01dc643ae0bb4af01fc7b73b363}
+Clear the image of a button.
+
+This method can be used to clear the icon of a particular button.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em button}]number of the button to which the icon is assigned (must be between 0 and 7). \item[{\em right\_\-handed}]orientation of the tablet.\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true, if transmission was successful, false, otherwise. 
+\end{DoxyReturn}
+
+
+Definition at line 329 of file WacomIntuos4LED.cpp.
+
+\hypertarget{classWacomIntuos4LED_ae75b2a53c3c54db95617d068eac9688c}{
+\index{WacomIntuos4LED@{WacomIntuos4LED}!deviceDisabled@{deviceDisabled}}
+\index{deviceDisabled@{deviceDisabled}!WacomIntuos4LED@{WacomIntuos4LED}}
+\subsubsection[{deviceDisabled}]{\setlength{\rightskip}{0pt plus 5cm}bool WacomIntuos4LED::deviceDisabled (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classWacomIntuos4LED_ae75b2a53c3c54db95617d068eac9688c}
+Check whether the device is disabled.
+
+This method can be used to check whether the device is disabled, i.e., dev\_\-handle equals NULL.
+
+\begin{DoxyReturn}{Returns}
+true, if no device was detected or an initialization error occured 
+\end{DoxyReturn}
+
+
+Definition at line 173 of file WacomIntuos4LED.cpp.
+
+\hypertarget{classWacomIntuos4LED_a92b68094ddf6fb17d02a94707ee4bca3}{
+\index{WacomIntuos4LED@{WacomIntuos4LED}!deviceEnabled@{deviceEnabled}}
+\index{deviceEnabled@{deviceEnabled}!WacomIntuos4LED@{WacomIntuos4LED}}
+\subsubsection[{deviceEnabled}]{\setlength{\rightskip}{0pt plus 5cm}bool WacomIntuos4LED::deviceEnabled (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classWacomIntuos4LED_a92b68094ddf6fb17d02a94707ee4bca3}
+Check whether the device is enabled.
+
+This method can be used to check whether the device is enabled, i.e., dev\_\-handle is non-\/null.
+
+\begin{DoxyReturn}{Returns}
+true, if a device was detected and is usable 
+\end{DoxyReturn}
+
+
+Definition at line 169 of file WacomIntuos4LED.cpp.
+
+\hypertarget{classWacomIntuos4LED_a504a9363724b045d3cad0e98e19f529e}{
+\index{WacomIntuos4LED@{WacomIntuos4LED}!displayPalette@{displayPalette}}
+\index{displayPalette@{displayPalette}!WacomIntuos4LED@{WacomIntuos4LED}}
+\subsubsection[{displayPalette}]{\setlength{\rightskip}{0pt plus 5cm}bool WacomIntuos4LED::displayPalette (
+\begin{DoxyParamCaption}
+\item[{bool}]{ right\_\-handed = {\ttfamily true}}
+\end{DoxyParamCaption}
+)}}
+\label{classWacomIntuos4LED_a504a9363724b045d3cad0e98e19f529e}
+Display a palette of all colors (gray tones) of the Intuos 4 LEDs.
+
+This method displays all available colors of the Intuos 4 tablet.
+
+\begin{DoxyReturn}{Returns}
+true, if the operation was successful, and false, otherwise. 
+\end{DoxyReturn}
+
+
+Definition at line 177 of file WacomIntuos4LED.cpp.
+
+\hypertarget{classWacomIntuos4LED_a67ea348323f7e7ed8056c228ea02a552}{
+\index{WacomIntuos4LED@{WacomIntuos4LED}!dumpIconAsStaticData@{dumpIconAsStaticData}}
+\index{dumpIconAsStaticData@{dumpIconAsStaticData}!WacomIntuos4LED@{WacomIntuos4LED}}
+\subsubsection[{dumpIconAsStaticData}]{\setlength{\rightskip}{0pt plus 5cm}void WacomIntuos4LED::dumpIconAsStaticData (
+\begin{DoxyParamCaption}
+\item[{unsigned char $\ast$}]{ icon, }
+\item[{string}]{ name = {\ttfamily \char`\"{}icon\char`\"{}}}
+\end{DoxyParamCaption}
+) const}}
+\label{classWacomIntuos4LED_a67ea348323f7e7ed8056c228ea02a552}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em icon}]pointer to the 1024 byte array containing the icon data. \item[{\em name}]name of the C static array. \end{DoxyParams}
+
+
+Definition at line 473 of file WacomIntuos4LED.cpp.
+
+\hypertarget{classWacomIntuos4LED_ad4e26d11fdf1978059b984780dd9f7e9}{
+\index{WacomIntuos4LED@{WacomIntuos4LED}!dumpIconNames@{dumpIconNames}}
+\index{dumpIconNames@{dumpIconNames}!WacomIntuos4LED@{WacomIntuos4LED}}
+\subsubsection[{dumpIconNames}]{\setlength{\rightskip}{0pt plus 5cm}void WacomIntuos4LED::dumpIconNames (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}
+\label{classWacomIntuos4LED_ad4e26d11fdf1978059b984780dd9f7e9}
+Dump names of library icons to standard output. 
+
+Definition at line 464 of file WacomIntuos4LED.cpp.
+
+\hypertarget{classWacomIntuos4LED_af2dd2a695a643156dbc2cdd1b3023fcd}{
+\index{WacomIntuos4LED@{WacomIntuos4LED}!dumpImageAsStaticData@{dumpImageAsStaticData}}
+\index{dumpImageAsStaticData@{dumpImageAsStaticData}!WacomIntuos4LED@{WacomIntuos4LED}}
+\subsubsection[{dumpImageAsStaticData}]{\setlength{\rightskip}{0pt plus 5cm}bool WacomIntuos4LED::dumpImageAsStaticData (
+\begin{DoxyParamCaption}
+\item[{const string}]{ file, }
+\item[{const string}]{ name = {\ttfamily \char`\"{}icon\char`\"{}}}
+\end{DoxyParamCaption}
+)}}
+\label{classWacomIntuos4LED_af2dd2a695a643156dbc2cdd1b3023fcd}
+Dump an image as a C static array.
+
+This method dumps an image file as a 1024 byte C static array. The method may be used to extend the icon library.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em file}]name of the image file. \item[{\em name}]name of the C static array.\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true, if transmission was successful, false, otherwise. 
+\end{DoxyReturn}
+
+
+Definition at line 236 of file WacomIntuos4LED.cpp.
+
+\hypertarget{classWacomIntuos4LED_adcb43a6ddd0a19557cf99ddbf08aff44}{
+\index{WacomIntuos4LED@{WacomIntuos4LED}!flipIconHorizontally@{flipIconHorizontally}}
+\index{flipIconHorizontally@{flipIconHorizontally}!WacomIntuos4LED@{WacomIntuos4LED}}
+\subsubsection[{flipIconHorizontally}]{\setlength{\rightskip}{0pt plus 5cm}void WacomIntuos4LED::flipIconHorizontally (
+\begin{DoxyParamCaption}
+\item[{unsigned char $\ast$}]{ icon}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classWacomIntuos4LED_adcb43a6ddd0a19557cf99ddbf08aff44}
+Flip an icon horizontally.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em icon}]pointer to a 1024 byte array including the icon data \end{DoxyParams}
+
+
+Definition at line 128 of file WacomIntuos4LED.cpp.
+
+\hypertarget{classWacomIntuos4LED_a7caf2972f79759408ce7d8d2667fdcd1}{
+\index{WacomIntuos4LED@{WacomIntuos4LED}!flipIconVertically@{flipIconVertically}}
+\index{flipIconVertically@{flipIconVertically}!WacomIntuos4LED@{WacomIntuos4LED}}
+\subsubsection[{flipIconVertically}]{\setlength{\rightskip}{0pt plus 5cm}void WacomIntuos4LED::flipIconVertically (
+\begin{DoxyParamCaption}
+\item[{unsigned char $\ast$}]{ icon}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classWacomIntuos4LED_a7caf2972f79759408ce7d8d2667fdcd1}
+Flip an icon vertically.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em icon}]pointer to a 1024 byte array including the icon data \end{DoxyParams}
+
+
+Definition at line 116 of file WacomIntuos4LED.cpp.
+
+\hypertarget{classWacomIntuos4LED_a6e09813294c5932179d083f8cd9993f8}{
+\index{WacomIntuos4LED@{WacomIntuos4LED}!imageToIcon@{imageToIcon}}
+\index{imageToIcon@{imageToIcon}!WacomIntuos4LED@{WacomIntuos4LED}}
+\subsubsection[{imageToIcon}]{\setlength{\rightskip}{0pt plus 5cm}bool WacomIntuos4LED::imageToIcon (
+\begin{DoxyParamCaption}
+\item[{const string \&}]{ file, }
+\item[{unsigned char $\ast$}]{ icon}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classWacomIntuos4LED_a6e09813294c5932179d083f8cd9993f8}
+Convert an image to an icon.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em file}]name of the image file. \item[{\em icon}]pointer to an 1024 byte block to store the converted image\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true, if transmission was successful, false, otherwise. 
+\end{DoxyReturn}
+
+
+Definition at line 299 of file WacomIntuos4LED.cpp.
+
+\hypertarget{classWacomIntuos4LED_adc3cd37e5820009183b5fa43578c2e76}{
+\index{WacomIntuos4LED@{WacomIntuos4LED}!init@{init}}
+\index{init@{init}!WacomIntuos4LED@{WacomIntuos4LED}}
+\subsubsection[{init}]{\setlength{\rightskip}{0pt plus 5cm}bool WacomIntuos4LED::init (
+\begin{DoxyParamCaption}
+\item[{uint16\_\-t}]{ vendor\_\-id, }
+\item[{uint16\_\-t}]{ product\_\-id}
+\end{DoxyParamCaption}
+)}}
+\label{classWacomIntuos4LED_adc3cd37e5820009183b5fa43578c2e76}
+Initialization of the tablet.
+
+This method initializes the tablet and the class data structures.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em vendor\_\-id}]vendor id of the tablet \item[{\em product\_\-id}]product id of the table\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true, if initialization was successful, false, otherwise. 
+\end{DoxyReturn}
+
+
+Definition at line 348 of file WacomIntuos4LED.cpp.
+
+\hypertarget{classWacomIntuos4LED_ab6fd1d732fb117cdeac89ecce1e452c7}{
+\index{WacomIntuos4LED@{WacomIntuos4LED}!initIconLibrary@{initIconLibrary}}
+\index{initIconLibrary@{initIconLibrary}!WacomIntuos4LED@{WacomIntuos4LED}}
+\subsubsection[{initIconLibrary}]{\setlength{\rightskip}{0pt plus 5cm}void WacomIntuos4LED::initIconLibrary (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classWacomIntuos4LED_ab6fd1d732fb117cdeac89ecce1e452c7}
+Init the icon library.
+
+This method sets up the icon library, this is, stores all available icons with their respective names in the icon\_\-table map. 
+
+Definition at line 64 of file WacomIntuos4LED.cpp.
+
+\hypertarget{classWacomIntuos4LED_aa963de95c325d024f52299e15239d637}{
+\index{WacomIntuos4LED@{WacomIntuos4LED}!sendControlMsg@{sendControlMsg}}
+\index{sendControlMsg@{sendControlMsg}!WacomIntuos4LED@{WacomIntuos4LED}}
+\subsubsection[{sendControlMsg}]{\setlength{\rightskip}{0pt plus 5cm}int WacomIntuos4LED::sendControlMsg (
+\begin{DoxyParamCaption}
+\item[{uint8\_\-t}]{ bm\_\-request\_\-type, }
+\item[{uint8\_\-t}]{ b\_\-request, }
+\item[{uint16\_\-t}]{ w\_\-value, }
+\item[{uint16\_\-t}]{ w\_\-index, }
+\item[{unsigned char $\ast$}]{ data, }
+\item[{uint16\_\-t}]{ w\_\-length, }
+\item[{unsigned int}]{ timeout, }
+\item[{unsigned int}]{ retries}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classWacomIntuos4LED_aa963de95c325d024f52299e15239d637}
+Send a control message to the USB device.
+
+This function is a wrapper to the underlying function of the USB library.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em bm\_\-request\_\-type}]the request type field for the setup packet \item[{\em b\_\-request}]the request field for the setup packet \item[{\em w\_\-value}]the value field for the setup packet \item[{\em w\_\-index}]the index field for the setup packet \item[{\em data}]data buffer to be transmitted \item[{\em w\_\-length}]length field for the setup packet. The data buffer should be at least this size. \item[{\em timeout}]timeout (in millseconds) that this function should wait before giving up due to no response being received. For an unlimited timeout, use value 0. \item[{\em retries}]number of retries in case of a transmission error.\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+error code ($<$0) in case of a transmission error, number of transferred bytes, otherwise. 
+\end{DoxyReturn}
+
+
+Definition at line 148 of file WacomIntuos4LED.cpp.
+
+\hypertarget{classWacomIntuos4LED_a1bbf66f9d21ee52a107b2ba7e0cb5cef}{
+\index{WacomIntuos4LED@{WacomIntuos4LED}!setIcon@{setIcon}}
+\index{setIcon@{setIcon}!WacomIntuos4LED@{WacomIntuos4LED}}
+\subsubsection[{setIcon}]{\setlength{\rightskip}{0pt plus 5cm}bool WacomIntuos4LED::setIcon (
+\begin{DoxyParamCaption}
+\item[{unsigned int}]{ button, }
+\item[{const unsigned char $\ast$}]{ icon, }
+\item[{bool}]{ right\_\-handed = {\ttfamily true}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classWacomIntuos4LED_a1bbf66f9d21ee52a107b2ba7e0cb5cef}
+Transfer an icon to the tablet.
+
+Ths method transfers an icon to the tablet.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em button}]number of the button to which the icon is assigned (must be between 0 and 7). \item[{\em icon}]pointer to a 1024 byte block which contains the bitmap. \item[{\em right\_\-handed}]orientation of the tablet.\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true, if transmission was successfull, false, otherwise. 
+\end{DoxyReturn}
+
+
+Definition at line 248 of file WacomIntuos4LED.cpp.
+
+\hypertarget{classWacomIntuos4LED_af4991024e32c329e052633a286cb85ba}{
+\index{WacomIntuos4LED@{WacomIntuos4LED}!setImage@{setImage}}
+\index{setImage@{setImage}!WacomIntuos4LED@{WacomIntuos4LED}}
+\subsubsection[{setImage}]{\setlength{\rightskip}{0pt plus 5cm}bool WacomIntuos4LED::setImage (
+\begin{DoxyParamCaption}
+\item[{unsigned int}]{ button, }
+\item[{const string}]{ file, }
+\item[{bool}]{ right\_\-handed = {\ttfamily true}}
+\end{DoxyParamCaption}
+)}}
+\label{classWacomIntuos4LED_af4991024e32c329e052633a286cb85ba}
+Ths method transfers an image to the tablet.
+
+This method can be used to transfer an image to the tablet. The image MUST have a dimension of 64 columns and 32 rows. Before the transmission the image is converted to a grayscale image and thereafter approximated by an image with 16 grayscale values.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em button}]number of the button to which the icon is assigned (must be between 0 and 7). \item[{\em file}]name of the image file. \item[{\em right\_\-handed}]orientation of the tablet.\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true, if transmission was successful, false, otherwise. 
+\end{DoxyReturn}
+
+
+Definition at line 225 of file WacomIntuos4LED.cpp.
+
+\hypertarget{classWacomIntuos4LED_a8d9cb89c7bcb3a718d23f63e314248d3}{
+\index{WacomIntuos4LED@{WacomIntuos4LED}!setLibraryIcon@{setLibraryIcon}}
+\index{setLibraryIcon@{setLibraryIcon}!WacomIntuos4LED@{WacomIntuos4LED}}
+\subsubsection[{setLibraryIcon}]{\setlength{\rightskip}{0pt plus 5cm}bool WacomIntuos4LED::setLibraryIcon (
+\begin{DoxyParamCaption}
+\item[{unsigned int}]{ button, }
+\item[{const string}]{ name, }
+\item[{bool}]{ right\_\-handed = {\ttfamily true}}
+\end{DoxyParamCaption}
+)}}
+\label{classWacomIntuos4LED_a8d9cb89c7bcb3a718d23f63e314248d3}
+Ths method transfers an library icon to the tablet.
+
+This method can be used to transfer a predefined library icon to the tablet.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em button}]number of the button to which the icon is assigned (must be between 0 and 7). \item[{\em name}]of the library icon. \item[{\em right\_\-handed}]orientation of the tablet.\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true, if transmission was successful, false, otherwise. 
+\end{DoxyReturn}
+
+
+Definition at line 216 of file WacomIntuos4LED.cpp.
+
+\hypertarget{classWacomIntuos4LED_a63439e43d482362627c9028e544ed545}{
+\index{WacomIntuos4LED@{WacomIntuos4LED}!setTransferMode@{setTransferMode}}
+\index{setTransferMode@{setTransferMode}!WacomIntuos4LED@{WacomIntuos4LED}}
+\subsubsection[{setTransferMode}]{\setlength{\rightskip}{0pt plus 5cm}bool WacomIntuos4LED::setTransferMode (
+\begin{DoxyParamCaption}
+\item[{bool}]{ mode}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classWacomIntuos4LED_a63439e43d482362627c9028e544ed545}
+Set the transfer mode of the tablet.
+
+This method is used to activate or deactivate the icon transfer mode of the tablet.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em mode}]true = enable transfer mode, false = disable transfer mode\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true, if operation was successful, false, otherwise. 
+\end{DoxyReturn}
+
+
+Definition at line 193 of file WacomIntuos4LED.cpp.
+
+\hypertarget{classWacomIntuos4LED_a7c5fc8f9c08c88d61633786a04a1047e}{
+\index{WacomIntuos4LED@{WacomIntuos4LED}!toIndex@{toIndex}}
+\index{toIndex@{toIndex}!WacomIntuos4LED@{WacomIntuos4LED}}
+\subsubsection[{toIndex}]{\setlength{\rightskip}{0pt plus 5cm}int WacomIntuos4LED::toIndex (
+\begin{DoxyParamCaption}
+\item[{int}]{ x, }
+\item[{int}]{ y}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classWacomIntuos4LED_a7c5fc8f9c08c88d61633786a04a1047e}
+Map a 2-\/dimensional coordinate to an array index.
+
+This method is used internally to to flip the icons vertically or horizontally.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em x}]x coordinate \item[{\em y}]y coordinate\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+array index 
+\end{DoxyReturn}
+
+
+Definition at line 112 of file WacomIntuos4LED.cpp.
+
+\hypertarget{classWacomIntuos4LED_a3113d983c8f690f7f2db4dbf5f0d7355}{
+\index{WacomIntuos4LED@{WacomIntuos4LED}!transformShade@{transformShade}}
+\index{transformShade@{transformShade}!WacomIntuos4LED@{WacomIntuos4LED}}
+\subsubsection[{transformShade}]{\setlength{\rightskip}{0pt plus 5cm}unsigned char WacomIntuos4LED::transformShade (
+\begin{DoxyParamCaption}
+\item[{double}]{ shade}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classWacomIntuos4LED_a3113d983c8f690f7f2db4dbf5f0d7355}
+Transform a grayscale value to a 4-\/bit graytone.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em grayscale}]as a floating point value\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+approximation of the grayscale as a 4-\/bit value 
+\end{DoxyReturn}
+
+
+Definition at line 106 of file WacomIntuos4LED.cpp.
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classWacomIntuos4LED_a20d7e60936642f82fc06ab227c34ee9b}{
+\index{WacomIntuos4LED@{WacomIntuos4LED}!context@{context}}
+\index{context@{context}!WacomIntuos4LED@{WacomIntuos4LED}}
+\subsubsection[{context}]{\setlength{\rightskip}{0pt plus 5cm}libusb\_\-context$\ast$ {\bf WacomIntuos4LED::context}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classWacomIntuos4LED_a20d7e60936642f82fc06ab227c34ee9b}
+USB context.
+
+USB context to use for communication. 
+
+Definition at line 31 of file WacomIntuos4LED.h.
+
+\hypertarget{classWacomIntuos4LED_a8afbdadc8bb470ca82ac4c117f431177}{
+\index{WacomIntuos4LED@{WacomIntuos4LED}!dev\_\-handle@{dev\_\-handle}}
+\index{dev\_\-handle@{dev\_\-handle}!WacomIntuos4LED@{WacomIntuos4LED}}
+\subsubsection[{dev\_\-handle}]{\setlength{\rightskip}{0pt plus 5cm}libusb\_\-device\_\-handle$\ast$ {\bf WacomIntuos4LED::dev\_\-handle}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classWacomIntuos4LED_a8afbdadc8bb470ca82ac4c117f431177}
+Device handle for tablet access.
+
+This handle is used to access the device. If no device was detected and initialized, this pointer equals NULL. 
+
+Definition at line 39 of file WacomIntuos4LED.h.
+
+\hypertarget{classWacomIntuos4LED_afaf5e54e94691f75468a57596f871ff2}{
+\index{WacomIntuos4LED@{WacomIntuos4LED}!icon\_\-table@{icon\_\-table}}
+\index{icon\_\-table@{icon\_\-table}!WacomIntuos4LED@{WacomIntuos4LED}}
+\subsubsection[{icon\_\-table}]{\setlength{\rightskip}{0pt plus 5cm}map$<$string,const unsigned char$\ast$$>$ {\bf WacomIntuos4LED::icon\_\-table}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classWacomIntuos4LED_afaf5e54e94691f75468a57596f871ff2}
+Table with icons.
+
+This table contains (pointers to) icons to be used with the intuos 4 led displays. For simplicity, the icons can be accessed by a unique name. 
+
+Definition at line 47 of file WacomIntuos4LED.h.
+
+
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+src/\hyperlink{WacomIntuos4LED_8h}{WacomIntuos4LED.h}\item 
+src/\hyperlink{WacomIntuos4LED_8cpp}{WacomIntuos4LED.cpp}\end{DoxyCompactItemize}
